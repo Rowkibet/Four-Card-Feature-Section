@@ -1,0 +1,292 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;600&display=swap');
+
+:root {
+    --red: hsl(0, 78%, 62%);
+    --cyan: hsl(180, 62%, 55%);
+    --orange: hsl(34, 97%, 64%);
+    --blue: hsl(212, 86%, 64%);
+    --dark-blue: hsl(234, 12%, 34%);
+    --grayish-blue: hsl(229, 6%, 66%);
+    --light-gray: hsl(0, 0%, 98%);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    background-color: var(--light-gray);
+    font-family: 'Poppins', sans-serif;
+    font-size: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.container {
+    /* width: 90%; */
+    max-width: 1296px;
+    display: grid;
+    justify-items: center;
+    align-content: center;
+    grid-gap: 80px;
+}
+
+.container header {
+    width: 50%;
+    text-align: center;
+}
+
+.container header h1 {
+    font-size: 2.85em;
+    line-height: 1.2;
+}
+
+.container header :nth-child(1) {
+    font-weight: 200;
+}
+
+.container header :nth-child(2) {
+    margin-bottom: 20px;
+}
+
+.container header p {
+    font-size: 1.2em;
+    font-weight: 400;
+    color: var(--grayish-blue);
+}
+
+.container .grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-areas:
+        "supervisor builder calculator"
+        "supervisor karma   calculator";
+    align-items: center;
+    grid-gap: 30px;
+}
+
+.item {
+    background: #fff;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0 30px 20px -10px rgb(163, 165, 174, 0.1),
+                0 10px 20px -5px rgb(163, 165, 174, 0.2);
+    padding: 35px;
+
+    display: grid;
+    grid-gap: 10px;
+}
+
+.item > h2 {
+    font-size: 1.6em;
+}
+
+.item > p {
+    margin-bottom: 40px;
+    font-size: 1.05em;
+    color: var(--grayish-blue);
+}
+
+.item > img {
+    justify-self: end;
+}
+
+.item.supervisor {
+    grid-area: supervisor;
+    position: relative;
+}
+
+.item.supervisor::before {
+    content: '';
+    display: block;
+    background-color: var(--cyan);
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    height: 5px;
+    width: 100%;
+    position: absolute;
+}
+
+.item.builder {
+    grid-area: builder;
+    position: relative;
+}
+
+.item.builder::before {
+    content: '';
+    display: block;
+    background-color: var(--red);
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    height: 5px;
+    width: 100%;
+    position: absolute;
+}
+
+.item.karma {
+    grid-area: karma;
+    position: relative;
+}
+
+.item.karma::before {
+    content: '';
+    display: block;
+    background-color: var(--orange);
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    height: 5px;
+    width: 100%;
+    position: absolute;
+}
+
+.item.calculator {
+    grid-area: calculator;
+    position: relative;
+}
+
+.item.calculator::before {
+    content: '';
+    display: block;
+    background-color: var(--blue);
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    height: 5px;
+    width: 100%;
+    position: absolute;
+}
+
+footer {
+    position: absolute;
+    bottom: 0;
+}
+
+footer .attribution {   
+    font-size: 11px; 
+    text-align: center; 
+}
+
+footer .attribution a { 
+    color: hsl(228, 45%, 44%); 
+}
+
+@media screen and (max-width: 1024px) {
+    .container {
+        max-width: 80%;
+    }
+    
+    .container header {
+        width: 70%;
+    }
+
+    .container header h1 {
+        font-size: 2.6em;
+    }
+
+    .container header p {
+        font-size: 1.1em;
+    }
+
+    .container .grid {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-areas:
+            "supervisor karma"
+            "builder    calculator";
+    }
+
+    .item > h2 {
+        font-size: 1.5em;
+    }
+    
+    .item > p {
+        font-size: 1em;
+    }
+
+    .item > img {
+        width: 60px;
+        height: 60px;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .container {
+        max-width: 90%;
+    }
+    
+    .container header {
+        width: 85%;
+    }
+
+    .container header h1 {
+        font-size: 2.5em;
+    }
+
+    .container header p {
+        font-size: 1.05em;
+    }
+
+    .item > h2 {
+        font-size: 1.4em;
+    }
+    
+    .item > p {
+        font-size: 0.9em;
+    }
+
+    .item > img {
+        width: 55px;
+        height: 55px;
+    }
+}
+
+@media screen and (max-width: 375px) {
+    .container {
+        max-width: 75%;
+    }
+    
+    .container header {
+        width: 100%;
+    }
+
+    .container header h1 {
+        font-size: 1.45em;
+        line-height: 1.4;
+    }
+
+    .container header p {
+        font-size: 0.9em;
+    }
+
+    .container .grid {
+        grid-template-columns: 1fr;
+        grid-template-areas:
+            "supervisor"
+            "builder"
+            "karma"
+            "calculator";
+    }
+
+    .item {
+        padding: 25px;
+        grid-gap: 5px;
+    }
+
+    .item > h2 {
+        font-size: 1.3em;
+    }
+    
+    .item > p {
+        font-size: 0.7em;
+        margin-bottom: 20px;
+    }
+
+    .item > img {
+        width: 42px;
+        height: 42px;
+    }
+}
